@@ -12,7 +12,7 @@ export default function Page() {
         alert('Sign out successful');
       })
       .catch((error) => {
-        console.error('Error signing out:', error);
+        alert('Error signing out:', error);
       });
   };
 

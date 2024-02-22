@@ -23,9 +23,10 @@ export default function Home() {
       .then((result) => {
         alert('Sign up successful');
         navigate('/Page');
+        
       })
       .catch((error) => {
-        setError(error);
+        setError(error.message);
       });
   };
 
