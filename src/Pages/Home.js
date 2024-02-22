@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <div className='app'>
-      <h1>Home Page</h1>
+      <h1>Let's Get Started</h1>
         {error && <p>{error}</p>}
       <button onClick={handleSign}>Continue With Google</button>
     </div>
