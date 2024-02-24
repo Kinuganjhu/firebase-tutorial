@@ -52,7 +52,7 @@
 }
 .page-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -60,6 +60,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .link-container img {
@@ -69,6 +72,7 @@
 
 .link-container h1 {
   text-align: center;
+  margin-top: 10px;
 }
 
 .link-container a {
@@ -84,4 +88,3 @@
 .link-container a:hover {
   background-color: #0056b3;
 }
-
