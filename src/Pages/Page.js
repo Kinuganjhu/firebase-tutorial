@@ -1,25 +1,22 @@
-import { signOut } from 'firebase/auth';
-import { auth } from './Firebase';
-import { useNavigate } from 'react-router-dom';
+import {
+  Link
+} from 'react-router-dom';
+import Profile from './Profile.svg';
+import Store from './Store.svg';
+
 
 export default function Page() {
-  const navigate = useNavigate();
-
-  const handleSignOut = () => {
-    signOut(auth)
-      .then(() => {
-        navigate('/'); // Removed extra parentheses and placed navigate outside of alert
-        alert('Sign out successful');
-      })
-      .catch((error) => {
-        alert('Error signing out:', error);
-      });
-  };
-
   return (
-    <div className='app'>
-      <h1>Welcome to our blog</h1>
-      <button onClick={handleSignOut}>Sign Out</button>
+    <div className="page-container">
+      <div className="link-container">
+        <img src={Store} alt="Store" />
+      
+        <Link to='/Store'>Go To Store</Link>
     </div>
-  );
+      <div className="link-container">
+        <img src={Profile} alt="Profile" />
+        <Link to='/Profile'>Go To Profile</Link>
+  </div>
+</div>
+);
 }
