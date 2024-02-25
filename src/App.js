@@ -16,7 +16,7 @@ export default function App() {
         <Route path='/Store' element={<Store />} />
         <Route path='/Profile' element={<Profile />} />
       
-        <Route path='*' element={<h1>Page Not Found</h1>} />
+        <Route path='*' element={<h1>Page does not exist</h1>} />
       </Routes>
     </>
   );
