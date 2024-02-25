@@ -1,12 +1,25 @@
-import { auth } from './Firebase';
-import { useState, useEffect } from 'react';
-import { GoogleAuthProvider, signInWithRedirect, onAuthStateChanged } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import {
+  auth
+} from './Firebase';
+import {
+  useState,
+  useEffect
+} from 'react';
+
+import {
+  GoogleAuthProvider,
+  signInWithRedirect,
+  onAuthStateChanged
+} from 'firebase/auth';
+import {
+  useNavigate
+} from 'react-router-dom';
 import log from './logo.svg';
 
 
 export default function Home() {
-  const [error, setError] = useState(null);
+  const [error,
+    setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,14 +35,14 @@ export default function Home() {
   const handleSign = (event) => {
     event.preventDefault(); // Prevent the default behavior of the event
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider)
-      .then((result) => {
-        alert('Sign up successful');
-        navigate('/Page');
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+   signInWithRedirect(auth, provider)
+    .then((result) => {
+      alert('Sign up successful');
+      navigate('/Page');
+    })
+    .catch((error) => {
+      setError(error.message);
+    });
   };
 
   return (
@@ -37,9 +50,12 @@ export default function Home() {
       <h1>Let's Get Started</h1>
       <button className='sign-up-button' onClick={handleSign}>
         <img src={log} alt='logo' height='24' width='24' />
-       &nbsp; Continue With Google
+       Continue With Google
       </button>
-      {error && <p>{error}</p>}
-    </div>
-  );
+      {error && <p>
+      {error}
+    </p>
+    }
+  </div>
+);
 }
