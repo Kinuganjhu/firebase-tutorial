@@ -1,10 +1,13 @@
+
 import useFetch from './useFetch';
+
 
 export default function Store() {
   const [data] = useFetch('https://fakestoreapi.com/products');
 
   const handleAddToCart = (productId) => {
     alert(`Product ${productId} added to cart`);
+  
   };
 
   return (
@@ -16,13 +19,14 @@ export default function Store() {
             <h5>{item.title}</h5>
             <button
               className="add-to-cart-btn"
-              onClick={() => handleAddToCart(item.id)}
+              onClick={() => handleAddToCart(item.id, item.image)}
             >
               Add to Cart
             </button>
           </div>
         </div>
       ))}
+    
     </>
   );
 }
